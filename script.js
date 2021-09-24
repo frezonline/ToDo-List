@@ -93,7 +93,7 @@ ul.addEventListener("click", ({ target }) => {
       return item;
     });
     localStorage.setItem("TODO storage", JSON.stringify(updatedStorage));
-    target.classList.toggle("done");
+    target.classList.toggle("checked");
   }
 });
 
