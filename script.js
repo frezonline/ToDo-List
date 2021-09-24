@@ -74,7 +74,6 @@ userInput.onkeypress = function click(event) {
   }
 };
 
-
 ul.addEventListener("click", ({ target }) => {
   const todoStorage = JSON.parse(localStorage.getItem("TODO storage"));
   if (target.closest(".close")) {
@@ -82,6 +81,19 @@ ul.addEventListener("click", ({ target }) => {
     const updatedStorage = todoStorage.filter((item) => item.id !== idOfNote);
     localStorage.setItem("TODO storage", JSON.stringify(updatedStorage));
     target.closest("li").remove();
+    return;
+  }
+
+  if (target.closest("li")) {
+    const idOfNote = +target.getAttribute("id");
+    const updatedStorage = todoStorage.map((item) => {
+      if (item.id === idOfNote) {
+        item.checked = !item.checked;
+      }
+      return item;
+    });
+    localStorage.setItem("TODO storage", JSON.stringify(updatedStorage));
+    target.classList.toggle("done");
   }
 });
 
