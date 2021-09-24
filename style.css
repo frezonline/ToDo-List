@@ -114,11 +114,6 @@ input {
   height: 20px;
 }
 
-.done {
-  background: #51df70 !important;
-  color: #00891e;
-}
-
 .delete {
   display: none;
 }
@@ -152,4 +147,9 @@ input {
 
 .fa-shopping-basket{
   padding-left: 10px;
+}
+
+.checked{
+  background: #51df70 !important;
+  color: #00891e;
 }
